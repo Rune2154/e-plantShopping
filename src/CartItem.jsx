@@ -24,7 +24,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
   const handleIncrement = (item) => {
     dispatch(updateQuantity({ ...item, quantity: item.quantity + 1 }));
-    setTotalQuantity(prevTotal => prevTotal + 1);
+    setTotalQuantity((prevTotal) => prevTotal + 1);
   };
 
   const handleDecrement = (item) => {
@@ -100,7 +100,12 @@ const CartItem = ({ onContinueShopping }) => {
           Continue Shopping
         </button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button
+          className="get-started-button1"
+          onClick={(e) => handleCheckoutShopping(e)}
+        >
+          Checkout
+        </button>
       </div>
     </div>
   );
